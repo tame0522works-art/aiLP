@@ -1,0 +1,89 @@
+/* ============================================================
+   COLORS — warm-neutral, premium, light-dominant palette.
+   Inspired by lexus.jp: near-black ink, warm off-whites,
+   stone/greige neutrals, restrained metallic accent.
+   Color is used sparingly — the system is monochrome-premium.
+   ============================================================ */
+
+:root {
+  /* ---- Base neutrals (warm grey / stone ramp) ---- */
+  --stone-0:   #ffffff;   /* pure white */
+  --stone-50:  #faf9f7;   /* warm paper — default page surface */
+  --stone-100: #f4f2ed;   /* raised surface / alt section */
+  --stone-200: #e8e4dc;   /* warm stone — borders, fills, hero accent */
+  --stone-300: #d6d0c4;   /* hairline on light, muted fill */
+  --stone-400: #b0a99b;   /* disabled text, faint icon */
+  --stone-500: #8a8275;   /* secondary text on light */
+  --stone-600: #5f594f;   /* tertiary heading on light */
+  --stone-700: #3a3631;   /* strong body on light */
+  --stone-800: #211f1c;   /* near-black surface */
+  --stone-900: #141312;   /* ink — primary dark surface */
+  --stone-950: #0a0a09;   /* deepest black — hero / footer */
+
+  /* ---- Accent: warm metallic / champagne (used very sparingly) ---- */
+  --accent-300: #d8c9a8;
+  --accent-400: #c4ad7e;  /* champagne — primary accent */
+  --accent-500: #a8915f;  /* deeper metallic, hover */
+  --accent-600: #8a763f;
+
+  /* ---- Semantic status (muted, not candy) ---- */
+  --positive:   #4f7a5b;
+  --warning:    #b08642;
+  --critical:   #a8513f;
+  --info:       #4a6577;
+
+  /* ============================================================
+     SEMANTIC ALIASES — reference these in components, not raw ramp.
+     ============================================================ */
+
+  /* Surfaces */
+  --surface-page:      var(--stone-50);
+  --surface-raised:    var(--stone-0);
+  --surface-alt:       var(--stone-100);
+  --surface-inverse:   var(--stone-950);   /* dark sections */
+  --surface-card:      var(--stone-0);
+
+  /* Text on light surfaces */
+  --text-primary:      var(--stone-900);
+  --text-secondary:    var(--stone-600);
+  --text-tertiary:     var(--stone-500);
+  --text-disabled:     var(--stone-400);
+
+  /* Text on dark surfaces */
+  --text-on-dark:        #f4f2ed;
+  --text-on-dark-muted:  #a8a299;
+  --text-on-dark-faint:  #6b665d;
+
+  /* Accent */
+  --text-accent:       var(--accent-500);
+  --surface-accent:    var(--accent-400);
+
+  /* Borders & hairlines */
+  --border-strong:     var(--stone-300);
+  --border-subtle:     var(--stone-200);
+  --border-on-dark:    rgba(244, 242, 237, 0.14);
+  --border-on-dark-strong: rgba(244, 242, 237, 0.28);
+
+  /* Interactive (buttons etc.) */
+  --action-solid:        var(--stone-900);
+  --action-solid-hover:  var(--stone-700);
+  --action-on-solid:     var(--stone-50);
+  --action-inverse:      var(--stone-0);
+  --action-on-inverse:   var(--stone-900);
+
+  /* Fills (mockup bars, chips, avatars) + nav scrim — theme-aware */
+  --fill-strong:       var(--stone-900);   /* highlight bar / active item */
+  --on-fill-strong:    var(--stone-50);
+  --fill-muted:        var(--stone-200);   /* resting bars, avatar, quote glyph */
+  --accent-tint:       rgba(196, 173, 126, 0.18);  /* faint accent chip bg */
+  --nav-scrim:         rgba(250, 249, 247, 0.82);  /* sticky nav after scroll */
+}
+
+/* ============================================================
+   THEMES — light is the default above (also the no-JS state).
+   Dark + Terminal live in tokens/themes.css (imported last so
+   :root[data-theme="…"] reliably overrides the base :root).
+   - light    … warm paper, ink text (default)
+   - dark     … warm near-black surfaces, light text
+   - terminal … green phosphor CRT — "how an AI sees the site"
+   ============================================================ */

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<rect width="100" height="100" fill="#0a0a09"></rect>
+<g fill="#c4ad7e">
+<rect x="30" y="60" width="9" height="18"></rect>
+<rect x="46" y="44" width="9" height="34"></rect>
+<rect x="62" y="24" width="9" height="54"></rect>
+</g>
+</svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/micro-saas-lp-design-system-23066524-9465-4306-a132-e0095e14745d/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/micro-saas-lp-design-system-23066524-9465-4306-a132-e0095e14745d/tokens/colors.css">
+<link rel="stylesheet" href="_ds/micro-saas-lp-design-system-23066524-9465-4306-a132-e0095e14745d/tokens/typography.css">
+<link rel="stylesheet" href="_ds/micro-saas-lp-design-system-23066524-9465-4306-a132-e0095e14745d/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/micro-saas-lp-design-system-23066524-9465-4306-a132-e0095e14745d/tokens/base.css">
+<link rel="stylesheet" href="_ds/micro-saas-lp-design-system-23066524-9465-4306-a132-e0095e14745d/tokens/themes.css">
+<link rel="stylesheet" href="_ds/micro-saas-lp-design-system-23066524-9465-4306-a132-e0095e14745d/styles.css">
+<script>(function(){try{var t=localStorage.getItem('foster-theme');document.documentElement.dataset.theme=(t==='light'||t==='terminal')?t:'dark';}catch(e){document.documentElement.dataset.theme='dark';}})();</script>
+<script src="_ds/micro-saas-lp-design-system-23066524-9465-4306-a132-e0095e14745d/_ds_bundle.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--surface-page);color:var(--text-primary);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;}
+  @keyframes fosRise{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
+  .fos-rise{animation:fosRise var(--dur-slow) var(--ease-out) both;}
+  @media (prefers-reduced-motion:reduce){.fos-rise{animation:none;}}
+  @media (max-width:980px){
+    .fos-hero-split{grid-template-columns:1fr !important;}
+    .fos-feat-grid,.fos-tools-grid,.fos-price-grid{grid-template-columns:1fr !important;}
+    .fos-navlinks{display:none !important;}
+    .fos-burger{display:inline-flex !important;}
+    .fos-cta-desktop{display:none !important;}
+  }
+  @media (min-width:981px){
+    .fos-burger{display:none !important;}
+    .fos-mobile-panel{display:none !important;}
+  }
+  @media (min-width:981px) and (max-width:1200px){
+    .fos-feat-grid,.fos-tools-grid{grid-template-columns:1fr 1fr !important;}
+  }
+  @media (max-width:640px){
+    .fos-proof-grid{grid-template-columns:1fr 1fr !important;}
+    .fos-steps-grid{grid-template-columns:1fr !important;}
+    .fos-foot-grid{grid-template-columns:1fr 1fr !important;}
+  }
+</style>
+</helmet>
+
+<div data-screen-label="Foster LP">
+
+  <!-- ============ NAV ============ -->
+  <header ref="{{ setNavRef }}" style="position:sticky;top:0;z-index:50;background:var(--nav-scrim);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:box-shadow var(--dur-base) var(--ease-out),border-color var(--dur-base) var(--ease-out);">
+    <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,40px);height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a href="#top" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text-primary);">
+        <svg viewBox="0 0 24 32" height="22" fill="none" style="display:block;color:var(--text-accent);" aria-hidden="true">
+          <rect x="0" y="22" width="5" height="10" fill="currentColor"></rect>
+          <rect x="9" y="12" width="5" height="20" fill="currentColor"></rect>
+          <rect x="18" y="2" width="5" height="30" fill="currentColor"></rect>
+        </svg>
+        <span style="font-family:var(--font-display);font-weight:600;font-size:20px;letter-spacing:-0.01em;">Foster</span>
+      </a>
+      <nav class="fos-navlinks" style="display:flex;align-items:center;gap:32px;">
+        <a href="#features" style="text-decoration:none;color:var(--text-secondary);font-size:var(--text-body-m);">特長</a>
+        <a href="#tools" style="text-decoration:none;color:var(--text-secondary);font-size:var(--text-body-m);">対応AI</a>
+        <a href="#pricing" style="text-decoration:none;color:var(--text-secondary);font-size:var(--text-body-m);">料金</a>
+        <a href="#process" style="text-decoration:none;color:var(--text-secondary);font-size:var(--text-body-m);">導入の流れ</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="display:flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--border-subtle);border-radius:var(--radius-md);">
+          <button onClick="{{ setLight }}" aria-label="Light" style="{{ styleThemeLight }}"><i data-lucide="sun" style="width:15px;height:15px;"></i></button>
+          <button onClick="{{ setDark }}" aria-label="Dark" style="{{ styleThemeDark }}"><i data-lucide="moon" style="width:15px;height:15px;"></i></button>
+          <button onClick="{{ setTerminal }}" aria-label="Terminal" style="{{ styleThemeTerminal }}"><i data-lucide="terminal" style="width:15px;height:15px;"></i></button>
+        </div>
+        <span class="fos-cta-desktop" style="display:inline-flex;">
+          <x-import component-from-global-scope="MicroSaaSLPDesignSystem_230665.Button" variant="solid" size="sm" onClick="{{ goContact }}" hint-size="auto,36px">資料請求</x-import>
+        </span>
+        <button class="fos-burger" onClick="{{ toggleMenu }}" aria-label="メニュー" aria-expanded="{{ menuOpen }}" style="display:none;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--border-subtle);border-radius:var(--radius-md);background:transparent;color:var(--text-primary);cursor:pointer;flex-shrink:0;">
+          <span style="{{ burgerMenuStyle }}"><i data-lucide="menu" style="width:20px;height:20px;display:block;"></i></span>
+          <span style="{{ burgerXStyle }}"><i data-lucide="x" style="width:20px;height:20px;display:block;"></i></span>
+        </button>
+      </div>
+    </div>
+    <div class="fos-mobile-panel" style="{{ mobilePanelStyle }}">
+      <div style="overflow:hidden;border-top:1px solid var(--border-subtle);">
+        <nav style="display:flex;flex-direction:column;padding:8px clamp(20px,5vw,40px) 20px;">
+          <sc-for list="{{ mobileLinks }}" as="lk" hint-placeholder-count="4">
+            <a href="{{ lk.href }}" onClick="{{ closeMenu }}" style="display:flex;align-items:center;justify-content:space-between;padding:16px 0;text-decoration:none;color:var(--text-primary);font-size:var(--text-body-l);border-bottom:1px solid var(--border-subtle);">
+              <span>{{ lk.label }}</span>
+              <span style="font-family:var(--font-mono);font-size:var(--text-label);color:var(--text-tertiary);">{{ lk.en }}</span>
+            </a>
+          </sc-for>
+          <div style="margin-top:18px;">
+            <x-import component-from-global-scope="MicroSaaSLPDesignSystem_230665.Button" variant="solid" size="lg" fullWidth="{{ true }}" onClick="{{ goContactMobile }}" hint-size="100%,52px">資料請求（無料）</x-import>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <sc-if value="{{ isSplit }}" hint-placeholder-val="{{ true }}">
+      <section style="background:var(--surface-page);overflow:hidden;">
+        <div class="fos-hero-split" style="max-width:1240px;margin:0 auto;padding:clamp(56px,8vw,104px) clamp(20px,5vw,40px) clamp(64px,9vw,120px);display:grid;grid-template-columns:1.05fr 0.95fr;gap:clamp(40px,5vw,72px);align-items:center;">
+          <div class="fos-rise">
+            <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:28px;">
+              <span style="width:7px;height:7px;background:var(--text-accent);display:inline-block;"></span>
+              <span style="font-family:var(--font-mono);font-size:var(--text-label);letter-spacing:0.18em;text-transform:uppercase;color:var(--text-tertiary);">AI ENABLEMENT — AI育成サービス</span>
+            </div>
+            <h1 style="font-family:var(--font-display);font-weight:300;font-size:var(--text-display-l);line-height:1.08;letter-spacing:-0.02em;margin:0 0 24px;color:var(--text-primary);text-wrap:balance;">あなたのAIを、<br>育成します。</h1>
+            <p style="max-width:30em;font-size:var(--text-body-l);line-height:1.85;color:var(--text-secondary);margin:0 0 14px;">「使いたいけれど時間がない」「社内にデジタル人材がいない」——そんなあなたに代わって、<strong style="font-weight:500;color:var(--text-primary);">Claude・Codex・Antigravity</strong> をあなたの業務に合わせて育て、すぐ使えるAIに仕立てます。</p>
+            <p style="font-family:var(--font-mono);font-size:var(--text-body-s);color:var(--text-tertiary);letter-spacing:0.02em;margin:0 0 32px;">相談無料 ・ 最短2週間で導入</p>
+            <div style="display:flex;flex-wrap:wrap;gap:14px;">
+              <x-import component-from-global-scope="MicroSaaSLPDesignSystem_230665.Button" variant="solid" size="lg" onClick="{{ goContact }}" hint-size="auto,52px">資料請求（無料）</x-import>
+              <x-import component-from-global-scope="MicroSaaSLPDesignSystem_230665.Button" variant="outline" size="lg" onClick="{{ goProcess }}" hint-size="auto,52px">導入の流れを見る</x-import>
+            </div>
+          </div>
+          <div class="fos-rise" style="animation-delay:120ms;">
+            <x-import component-from-global-scope="MicroSaaSLPDesignSystem_230665.Card" variant="default" padding="0" hint-size="100%,360px" style="overflow:hidden;box-shadow:var(--shadow-lg);">
+              <div style="padding:15px 18px;border-bottom:1px solid var(--border-subtle);display:flex;align-items:center;gap:10px;">
+                <span style="display:flex;gap:6px;"><span style="width:9px;height:9px;border-radius:50%;background:var(--fill-muted);"></span><span style="width:9px;height:9px;border-radius:50%;background:var(--fill-muted);"></span><span style="width:9px;height:9px;border-radius:50%;background:var(--fill-muted);"></span></span>
+                <span style="font-family:var(--font-mono);font-size:var(--text-label);letter-spacing:0.06em;color:var(--text-tertiary);margin-left:6px;">claude · あなたの業務に育成中</span>
+              </div>
+              <div style="padding:22px 20px;display:flex;flex-direction:column;gap:16px;">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                  <span style="font-size:var(--text-body-m);color:var(--text-secondary);">社内ドキュメントの要約</span>
+                  <span style="font-family:var(--font-mono);font-size:var(--text-label);text-transform:uppercase;letter-spacing:0.06em;color:var(--positive);">学習済み</span>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                  <span style="font-size:var(--text-body-m);color:var(--text-secondary);">問い合わせの一次対応</span>
+                  <span style="font-family:var(--font-mono);font-size:var(--text-label);text-transform:uppercase;letter-spacing:0.06em;color:var(--positive);">学習済み</span>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                  <span style="font-size:var(--text-body-m);color:var(--text-secondary);">定例レポートの作成</span>
+                  <span style="font-family:var(--font-mono);font-size:var(--text-label);text-transform:uppercase;letter-spacing:0.06em;color:var(--warning);">調整中</span>
+                </div>
+                <div style="margin-top:6px;padding-top:18px;border-top:1px solid var(--border-subtle);">
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px;">
+                    <span style="font-family:var(--font-mono);font-size:var(--text-label);letter-spacing:0.06em;text-transform:uppercase;color:var(--text-tertiary);">業務フィット</span>
+                    <span style="font-family:var(--font-display);font-size:var(--text-heading-m);font-weight:300;color:var(--text-primary);">82%</span>
+                  </div>
+                  <div style="height:6px;background:var(--fill-muted);border-radius:var(--radius-xs);overflow:hidden;"><div style="height:100%;width:82%;background:var(--text-primary);"></div></div>
+                </div>
+              </div>
+            </x-import>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isFullbleed }}" hint-placeholder-val="{{ true }}">
+      <section style="background:var(--surface-inverse);position:relative;overflow:hidden;">
+        <div style="position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 0%, var(--accent-tint), transparent 60%);"></div>
+        <div style="position:relative;max-width:1000px;margin:0 auto;padding:clamp(96px,15vw,200px) clamp(20px,5vw,40px);text-align:center;">
+          <div class="fos-rise" style="display:inline-flex;align-items:center;gap:10px;margin-bottom:32px;">
+            <span style="width:7px;height:7px;background:var(--accent-400);display:inline-block;"></span>
+            <span style="font-family:var(--font-mono);font-size:var(--text-label);letter-spacing:0.18em;text-transform:uppercase;color:var(--text-on-dark-muted);">AI ENABLEMENT — AI育成サービス</span>
+          </div>
+          <h1 class="fos-rise" style="animation-delay:80ms;font-family:var(--font-display);font-weight:300;font-size:var(--text-display-xl);line-height:1.04;letter-spacing:-0.025em;margin:0 0 28px;color:var(--text-on-dark);text-wrap:balance;">あなたのAIを、<br>育成します。</h1>
+          <p class="fos-rise" style="animation-delay:160ms;max-width:34em;margin:0 auto 36px;font-size:var(--text-body-l);line-height:1.9;color:var(--text-on-dark-muted);">Claude・Codex・Antigravity を、あなたの業務に合わせてセットアップ・チューニング。時間もデジタル人材も要らず、すぐ使えるAIに育て上げます。</p>
+          <div class="fos-rise" style="animation-delay:220ms;display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:24px;">
+            <x-import component-from-global-scope="MicroSaaSLPDesignSystem_230665.Button" variant="inverse" size="lg" onClick="{{ goContact }}" hint-size="auto,52px">資料請求（無料）</x-import>
+            <x-import component-from-global-scope="MicroSaaSLPDesignSystem_230665.Button" variant="outline" size="lg" onClick="{{ goProcess }}" hint-size="auto,52px" style="color:var(--text-on-dark);border-color:var(--border-on-dark-strong);">導入の流れを見る</x-import>
+          </div>
+          <p style="font-family:var(--font-mono);font-size:var(--text-body-s);color:var(--text-on-dark-faint);letter-spacing:0.04em;margin:0;">相談無料 ・ 最短2週間で導入</p>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{ isOverlay }}" hint-placeholder-val="{{ true }}">
+      <section style="background:var(--surface-inverse);position:relative;overflow:hidden;">
+        <div class="fos-hero-split" style="max-width:1240px;margin:0 auto;padding:clamp(72px,11vw,150px) clamp(20px,5vw,40px) clamp(64px,9vw,120px);display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(40px,5vw,72px);align-items:end;">
+          <div class="fos-rise">
+            <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:28px;">
+              <span style="width:7px;height:7px;background:var(--accent-400);display:inline-block;"></span>
+              <span style="font-family:var(--font-mono);font-size:var(--text-label);letter-spacing:0.18em;text-transform:uppercase;color:var(--text-on-dark-muted);">AI ENABLEMENT — AI育成サービス</span>
+            </div>
+            <h1 style="font-family:var(--font-display);font-weight:300;font-size:var(--text-display-xl);line-height:1.04;letter-spacing:-0.025em;margin:0 0 24px;color:var(--text-on-dark);text-wrap:balance;">あなたのAIを、<br>育成します。</h1>
+            <p style="max-width:30em;font-size:var(--text-body-l);line-height:1.85;color:var(--text-on-dark-muted);margin:0 0 32px;">時間がない人、デジタル人材がいない会社へ。Claude・Codex・Antigravity をあなたの業務に合わせて育て、すぐ使えるAIに。</p>
+            <div style="display:flex;flex-wrap:wrap;gap:14px;">
+              <x-import component-from-global-scope="MicroSaaSLPDesignSystem_230665.Button" variant="inverse" size="lg" onClick="{{ goContact }}" hint-size="auto,52px">資料請求（無料）</x-import>
+              <x-import component-from-global-scope="MicroSaaSLPDesignSystem_230665.Button" variant="outline" size="lg" onClick="{{ goProcess }}" hint-size="auto,52px" style="color:var(--text-on-dark);border-color:var(--border-on-dark-strong);">導入の流れを見る</x-import>
+            </div>
+          </div>
+          <div class="fos-rise" style="animation-delay:120ms;background:var(--accent-tint);border:1px solid var(--border-on-dark);border-radius:var(--radius-md);overflow:hidden;">
+            <div style="padding:14px 18px;border-bottom:1px solid var(--border-on-dark);display:flex;align-items:center;gap:10px;">
+              <span style="display:flex;gap:6px;"><span style="width:9px;height:9px;border-radius:50%;background:var(--border-on-dark-strong);"></span><span style="width:9px;height:9px;border-radius:50%;background:var(--border-on-dark-strong);"></span><span style="width:9px;height:9px;border-radius:50%;background:var(--border-on-dark-strong);"></span></span>
+              <span style="font-family:var(--font-mono);font-size:var(--text-label);color:var(--text-on-dark-muted);margin-left:6px;">claude · 育成中</span>
+            </div>
+            <div style="padding:20px 18px;display:flex;flex-direction:column;gap:14px;">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;"><span style="font-size:var(--text-body-m);color:var(--text-on-dark-muted);">社内ドキュメントの要約</span><span style="font-family:var(--font-mono);font-size:var(--text-label);text-transform:uppercase;color:var(--positive);">学習済み</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;"><span style="font-size:var(--text-body-m);color:var(--text-on-dark-muted);">問い合わせの一次対応</span><span style="font-family:var(--font-mono);font-size:var(--text-label);text-transform:uppercase;color:var(--positive);">学習済み</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;"><span style="font-size:var(--text-body-m);color:var(--text-on-dark-muted);">定例レポートの作成</span><span style="font-family:var(--font-mono);font-size:var(--text-label);text-transform:uppercase;color:var(--accent-400);">調整中</span></div>
+              <div style="margin-top:4px;padding-top:16px;border-top:1px solid var(--border-on-dark);"><div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px;"><span style="font-family:var(--font-mono);font-size:var(--text-label);text-transform:uppercase;color:var(--text-on-dark-muted);">業務フィット</span><span style="font-family:var(--font-display);font-size:var(--text-heading-m);font-weight:300;color:var(--text-on-dark);">82%</span></div><div style="height:6px;background:var(--border-on-dark);border-radius:var(--radius-xs);overflow:hidden;"><div style="height:100%;width:82%;background:var(--accent-400);"</div></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+
+    <!-- ============ PROOF ============ -->
+    <sc-if value="{{ showProof }}" hint-placeholder-val="{{ true }}">
+      <section style="background:var(--surface-alt);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+        <div style="max-width:1240px;margin:0 auto;padding:clamp(36px,5vw,56px) clamp(20px,5vw,40px);">
+          <div class="fos-proof-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
+            <sc-for list="{{ proofStats }}" as="s" hint-placeholder-count="4">
+              <x-import component-from-global-scope="MicroSaaSLPDesignSystem_230665.Stat" value="{{ s.value }}" label="{{ s.label }}" align="center" hint-size="auto,64px"></x-import>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+
+    <!-- ============ FEATURES ============ -->
+    <section id="features" style="background:var(--surface-page);scroll-margin-top:84px;">
+      <div style="max-width:1240px;margin:0 auto;padding:clamp(72px,10vw,128px) clamp(20px,5vw,40px);">
+        <div style="max-width:38em;margin-bottom:clamp(40px,5vw,64px);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:var(--font-mono);font-size:var(--text-label);color:var(--text-accent);letter-spacing:0.1em;">01</span><span style="font-family:var(--font-mono);font-size:var(--text-label);letter-spacing:0.18em;text-transform:uppercase;color:var(--text-tertiary);">FEATURES — 特長</span></div>
+          <h2 style="font-family:var(--font-display);font-weight:300;font-size:var(--text-display-m);line-height:1.12;letter-spacing:-0.02em;margin:0 0 16px;color:var(--text-primary);text-wrap:balance;">「育てる」を、まるごと引き受ける。</h2>
+          <p style="font-size:var(--text-body-l);line-height:1.8;color:var(--text-secondary);margin:0;">ツールを渡して終わり、にはしません。あなたの業務に合うまで、Fosterが責任を持って育てます。</p>
+        </div>
+        <div class="fos-feat-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+          <sc-for list="{{ features }}" as="f" hint-placeholder-count="4">
+            <x-import component-from-global-scope="MicroSaaSLPDesignSystem_230665.Card" variant="default" hint-size="100%,240px" style="display:flex;flex-direction:column;height:100%;">
+              <span style="display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;border:1px solid var(--border-subtle);border-radius:var(--radius-md);color:var(--text-accent);margin-bottom:22px;"><i data-lucide="{{ f.icon }}" style="width:20px;height:20px;"></i></span>
+              <span style="font-family:var(--font-mono);font-size:var(--text-label);letter-spacing:0.12em;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:8px;">{{ f.en }}</span>
+              <h3 style="font-size:var(--text-heading-s);font-weight:600;margin:0 0 10px;color:var(--text-primary);">{{ f.title }}</h3>
+              <p style="font-size:var(--text-body-m);line-height:1.75;color:var(--text-secondary);margin:0;">{{ f.body }}</p>
+            </x-import>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TOOLS (dark band) ============ -->
+    <section id="tools" style="background:var(--surface-inverse);scroll-margin-top:84px;">
+      <div style="max-width:1240px;margin:0 auto;padding:clamp(72px,10vw,128px) clamp(20px,5vw,40px);">
+        <div style="max-width:40em;margin-bottom:clamp(40px,5vw,64px);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:var(--font-mono);font-size:var(--text-label);color:var(--accent-400);letter-spacing:0.1em;">02</span><span style="font-family:var(--font-mono);font-size:var(--text-label);letter-spacing:0.18em;text-transform:uppercase;color:var(--text-on-dark-muted);">SUPPORTED AI — 対応AIツール</span></div>
+          <h2 style="font-family:var(--font-display);font-weight:300;font-size:var(--text-display-m);line-height:1.12;letter-spacing:-0.02em;margin:0 0 16px;color:var(--text-on-dark);text-wrap:balance;">最適なAIを、使い分けて育てる。</h2>
+          <p style="font-size:var(--text-body-l);line-height:1.8;color:var(--text-on-dark-muted);margin:0;">一つのモデルに固定しません。業務ごとに得意なAIを選び、組み合わせて運用します。</p>
+        </div>
+        <div class="fos-tools-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+          <sc-for list="{{ tools }}" as="tl" hint-placeholder-count="4">
+            <div style="display:flex;flex-direction:column;height:100%;background:var(--accent-tint);border:1px solid var(--border-on-dark);border-radius:var(--radius-md);padding:var(--space-6);transition:background var(--dur-base) var(--ease-out);">
+              <span style="display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;border:1px solid var(--border-on-dark);border-radius:var(--radius-md);color:var(--accent-400);margin-bottom:22px;"><i data-lucide="{{ tl.icon }}" style="width:20px;height:20px;"></i></span>
+              <h3 style="font-family:var(--font-display);font-size:var(--text-heading-m);font-weight:400;margin:0 0 4px;color:var(--text-on-dark);">{{ tl.name }}</h3>
+              <span style="font-family:var(--font-mono);font-size:var(--text-label);letter-spacing:0.08em;text-transform:uppercase;color:var(--text-on-dark-faint);margin-bottom:14px;">{{ tl.role }}</span>
+              <p style="font-size:var(--text-body-m);line-height:1.75;color:var(--text-on-dark-muted);margin:0;">{{ tl.body }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section id="pricing" style="background:var(--surface-page);scroll-margin-top:84px;">
+      <div style="max-width:1240px;margin:0 auto;padding:clamp(72px,10vw,128px) clamp(20px,5vw,40px);">
+        <div style="max-width:40em;margin-bottom:clamp(40px,5vw,64px);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:var(--font-mono);font-size:var(--text-label);color:var(--text-accent);letter-spacing:0.1em;">03</span><span style="font-family:var(--font-mono);font-size:var(--text-label);letter-spacing:0.18em;text-transform:uppercase;color:var(--text-tertiary);">PRICING — 料金プラン</span></div>
+          <h2 style="font-family:var(--font-display);font-weight:300;font-size:var(--text-display-m);line-height:1.12;letter-spacing:-0.02em;margin:0 0 16px;color:var(--text-primary);text-wrap:balance;">規模に合わせて、無理なく。</h2>
+          <p style="font-size:var(--text-body-l);line-height:1.8;color:var(--text-secondary);margin:0;">個人のお試しから全社展開まで。まずは一つ、育ててみるところから始められます。</p>
+        </div>
+        <div class="fos-price-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;">
+          <sc-for list="{{ plans }}" as="p" hint-placeholder-count="3">
+            <div style="display:flex;flex-direction:column;height:100%;border-radius:var(--radius-md);padding:var(--space-7);background:{{ p.bg }};border:1px solid {{ p.border }};color:{{ p.fg }};box-shadow:{{ p.shadow }};">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px;">
+                <h3 style="font-family:var(--font-display);font-size:var(--text-heading-m);font-weight:400;margin:0;color:{{ p.fg }};">{{ p.name }}</h3>
+                <sc-if value="{{ p.featured }}" hint-placeholder-val="{{ true }}"><span style="font-family:var(--font-mono);font-size:var(--text-label);letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-400);border:1px solid var(--accent-400);border-radius:var(--radius-xs);padding:4px 8px;">人気</span></sc-if>
+              </div>
+              <span style="font-family:var(--font-mono);font-size:var(--text-label);letter-spacing:0.06em;text-transform:uppercase;color:{{ p.muted }};margin-bottom:20px;">{{ p.en }}</span>
+              <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px;">
+                <span style="font-family:var(--font-display);font-weight:300;font-size:var(--text-display-m);letter-spacing:-0.02em;line-height:1;color:{{ p.fg }};">{{ p.price }}</span>
+                <span style="font-family:var(--font-mono);font-size:var(--text-body-s);color:{{ p.muted }};">{{ p.unit }}</span>
+              </div>
+              <p style="font-size:var(--text-body-m);line-height:1.6;color:{{ p.muted }};margin:0 0 24px;min-height:2.6em;">{{ p.tagline }}</p>
+              <ul style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:12px;flex:1;">
+                <sc-for list="{{ p.features }}" as="ft" hint-placeholder-count="4">
+                  <li style="display:flex;align-items:flex-start;gap:10px;font-size:var(--text-body-m);line-height:1.5;color:{{ p.fg }};"><i data-lucide="check" style="width:16px;height:16px;flex-shrink:0;margin-top:2px;color:var(--accent-400);"></i><span>{{ ft }}</span></li>
+                </sc-for>
+              </ul>
+              <x-import component-from-global-scope="MicroSaaSLPDesignSystem_230665.Button" variant="{{ p.btnVariant }}" size="md" fullWidth="{{ true }}" onClick="{{ goContact }}" hint-size="100%,44px">{{ p.cta }}</x-import>
+            </div>
+          </sc-for>
+        </div>
+        <p style="font-family:var(--font-mono);font-size:var(--text-body-s);color:var(--text-tertiary);margin:24px 0 0;letter-spacing:0.02em;">※ 表示価格は税別の目安です。業務内容により最適なプランをご提案します。</p>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section id="process" style="background:var(--surface-alt);border-top:1px solid var(--border-subtle);scroll-margin-top:84px;">
+      <div style="max-width:1240px;margin:0 auto;padding:clamp(72px,10vw,128px) clamp(20px,5vw,40px);">
+        <div style="max-width:40em;margin-bottom:clamp(40px,5vw,64px);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:var(--font-mono);font-size:var(--text-label);color:var(--text-accent);letter-spacing:0.1em;">04</span><span style="font-family:var(--font-mono);font-size:var(--text-label);letter-spacing:0.18em;text-transform:uppercase;color:var(--text-tertiary);">PROCESS — 導入の流れ</span></div>
+          <h2 style="font-family:var(--font-display);font-weight:300;font-size:var(--text-display-m);line-height:1.12;letter-spacing:-0.02em;margin:0 0 16px;color:var(--text-primary);text-wrap:balance;">相談から運用まで、4ステップ。</h2>
+          <p style="font-size:var(--text-body-l);line-height:1.8;color:var(--text-secondary);margin:0;">難しい準備は不要です。あなたは「やりたいこと」を話すだけ。</p>
+        </div>
+        <div class="fos-steps-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+          <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+            <div style="padding-top:24px;border-top:1px solid var(--border-strong);">
+              <span style="font-family:var(--font-mono);font-size:var(--text-heading-m);color:var(--text-accent);letter-spacing:0.02em;">{{ st.n }}</span>
+              <h3 style="font-size:var(--text-heading-s);font-weight:600;margin:16px 0 10px;color:var(--text-primary);">{{ st.title }}</h3>
+              <p style="font-size:var(--text-body-m);line-height:1.75;color:var(--text-secondary);margin:0;">{{ st.body }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA (dark) ============ -->
+    <section id="contact" style="background:var(--surface-inverse);scroll-margin-top:84px;position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background:radial-gradient(120% 100% at 50% 100%, var(--accent-tint), transparent 55%);"></div>
+      <div style="position:relative;max-width:760px;margin:0 auto;padding:clamp(80px,12vw,148px) clamp(20px,5vw,40px);text-align:center;">
+        <span style="font-family:var(--font-mono);font-size:var(--text-label);letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-400);">GET STARTED — お問い合わせ</span>
+        <h2 style="font-family:var(--font-display);font-weight:300;font-size:var(--text-display-l);line-height:1.08;letter-spacing:-0.02em;margin:20px 0 18px;color:var(--text-on-dark);text-wrap:balance;">まずは、資料から。</h2>
+        <p style="max-width:32em;margin:0 auto 36px;font-size:var(--text-body-l);line-height:1.85;color:var(--text-on-dark-muted);">サービス内容・料金・導入事例をまとめた資料を無料でお送りします。気になることは、相談だけでも歓迎です。</p>
+        <form onSubmit="{{ onSubmit }}" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:480px;margin:0 auto 16px;">
+          <input type="email" required placeholder="メールアドレス" style="flex:1;min-width:220px;height:50px;padding:0 16px;background:var(--accent-tint);border:1px solid var(--border-on-dark-strong);border-radius:var(--radius-md);color:var(--text-on-dark);font-family:var(--font-sans);font-size:var(--text-body-m);outline:none;">
+          <x-import component-from-global-scope="MicroSaaSLPDesignSystem_230665.Button" variant="inverse" size="lg" type="submit" hint-size="auto,50px">資料請求（無料）</x-import>
+        </form>
+        <p style="font-family:var(--font-mono);font-size:var(--text-body-s);color:var(--text-on-dark-faint);letter-spacing:0.04em;margin:0;">通常1営業日以内にお送りします ・ 営業のしつこい連絡はしません</p>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer style="background:var(--surface-alt);border-top:1px solid var(--border-subtle);">
+      <div style="max-width:1240px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,5vw,40px) 40px;">
+        <div class="fos-foot-grid" style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:56px;">
+          <div>
+            <a href="#top" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text-primary);margin-bottom:18px;">
+              <svg viewBox="0 0 24 32" height="22" fill="none" style="display:block;color:var(--text-accent);" aria-hidden="true"><rect x="0" y="22" width="5" height="10" fill="currentColor"></rect><rect x="9" y="12" width="5" height="20" fill="currentColor"></rect><rect x="18" y="2" width="5" height="30" fill="currentColor"></rect></svg>
+              <span style="font-family:var(--font-display);font-weight:600;font-size:20px;letter-spacing:-0.01em;">Foster</span>
+            </a>
+            <p style="font-size:var(--text-body-m);line-height:1.7;color:var(--text-secondary);margin:0;max-width:22em;">あなたのAIを、育成します。<br>時間とデジタル人材のいらない、AI導入を。</p>
+          </div>
+          <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="3">
+            <div>
+              <h4 style="font-family:var(--font-mono);font-size:var(--text-label);letter-spacing:0.12em;text-transform:uppercase;color:var(--text-tertiary);margin:0 0 18px;">{{ col.title }}</h4>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;">
+                <sc-for list="{{ col.links }}" as="lk" hint-placeholder-count="4">
+                  <li><a href="#" style="text-decoration:none;font-size:var(--text-body-m);color:var(--text-secondary);">{{ lk }}</a></li>
+                </sc-for>
+              </ul>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--border-subtle);">
+          <span style="font-family:var(--font-mono);font-size:var(--text-body-s);color:var(--text-tertiary);">© 2026 Foster, Inc. All rights reserved.</span>
+          <div style="display:flex;gap:20px;"><a href="#" style="text-decoration:none;font-family:var(--font-mono);font-size:var(--text-body-s);color:var(--text-tertiary);">X</a><a href="#" style="text-decoration:none;font-family:var(--font-mono);font-size:var(--text-body-s);color:var(--text-tertiary);">note</a><a href="#" style="text-decoration:none;font-family:var(--font-mono);font-size:var(--text-body-s);color:var(--text-tertiary);">プライバシー</a></div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;heroLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;split&quot;,&quot;fullbleed&quot;,&quot;overlay&quot;],&quot;default&quot;:&quot;split&quot;,&quot;tsType&quot;:&quot;'split'|'fullbleed'|'overlay'&quot;},&quot;showProof&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;champagne&quot;,&quot;signal&quot;,&quot;phosphor&quot;],&quot;default&quot;:&quot;champagne&quot;,&quot;tsType&quot;:&quot;'champagne'|'signal'|'phosphor'&quot;}}">
+const CONTENT = {
+  proofStats: [
+    { value: '3+', label: '対応AI / Models' },
+    { value: '2週間', label: '最短導入 / Onboarding' },
+    { value: '-70%', label: '作業工数 / Less work' },
+    { value: '96%', label: '継続率 / Retention' },
+  ],
+  features: [
+    { icon: 'sliders-horizontal', en: 'Tuned to you', title: '業務に合わせて育てる', body: '業務フロー・社内ドキュメント・言葉づかいを学習させ、現場で使えるAIにチューニングします。' },
+    { icon: 'wand-sparkles', en: 'Fully managed', title: '設計から運用まで丸ごと', body: 'AIの選定・構築・運用までを代行。時間もデジタル人材も、用意する必要はありません。' },
+    { icon: 'layers', en: 'Multi-model', title: '主要AIを使い分け', body: 'Claude・Codex・Antigravity など、用途ごとに最適なモデルを組み合わせて活用します。' },
+    { icon: 'shield-check', en: 'Safe by design', title: '安全への配慮', body: '社内データの取り扱いを前提に設計。アクセス範囲と運用ルールを明確にします。' },
+  ],
+  tools: [
+    { icon: 'message-circle', name: 'Claude', role: '対話・思考・文章', body: '長い文脈の理解とツール操作に強い対話AI。調査・要約・起案を任せられます。' },
+    { icon: 'square-code', name: 'Codex', role: 'コード・自動化', body: 'コード生成やスクリプト化で、開発・定型業務のスピードを引き上げます。' },
+    { icon: 'orbit', name: 'Antigravity', role: 'エージェント・自律実行', body: '複数の手順を自律的にこなすエージェントを構築。複雑な業務を任せられます。' },
+    { icon: 'plus', name: 'その他のモデル', role: 'GPT / Gemini ほか', body: '用途に応じて主要なモデルにも対応。最適な組み合わせをご提案します。' },
+  ],
+  plans: [
+    { name: 'ライト', en: 'Light', price: '¥198,000', unit: '〜 / 一括', tagline: 'まず一つ、育ててみたい個人・経営者に', features: ['AI 1ツールの育成', '業務に合わせた基本チューニング', '使い方レクチャー', '30日間サポート'], cta: '資料請求', featured: false },
+    { name: 'スタンダード', en: 'Standard', price: '¥98,000', unit: '/ 月', tagline: 'デジタル人材がいない中小企業に', features: ['複数ツールの育成・連携', '継続チューニング', '運用代行・月次レポート', 'チーム向けレクチャー'], cta: '資料請求', featured: true },
+    { name: 'エンタープライズ', en: 'Enterprise', price: 'お問合せ', unit: '個別見積', tagline: '全社・部門での本格導入に', features: ['全社展開・複数部門対応', '専任担当 / SSO・監査対応', 'セキュリティ要件への対応', 'SLA 保証'], cta: '相談する', featured: false },
+  ],
+  steps: [
+    { n: '01', title: '無料相談', body: 'いまの業務と課題、やりたいことをお聞きします。' },
+    { n: '02', title: '育成プラン設計', body: '最適なAIと「育て方」を設計し、ご提案します。' },
+    { n: '03', title: '構築・チューニング', body: 'あなた専用にセットアップし、現場で試します。' },
+    { n: '04', title: '運用・継続育成', body: '使いながら改善。AIを継続的に育て続けます。' },
+  ],
+  footerCols: [
+    { title: 'サービス', links: ['特長', '対応AI', '料金', '導入の流れ'] },
+    { title: '会社', links: ['会社概要', 'ブログ', '採用情報', 'お問い合わせ'] },
+    { title: 'リソース', links: ['資料ダウンロード', 'よくある質問', '活用事例', 'お役立ち記事'] },
+  ],
+};
+
+const ACCENTS = {
+  champagne: { a3: '#d8c9a8', a4: '#c4ad7e', a5: '#a8915f', a6: '#8a763f' },
+  signal:    { a3: '#9cc4ec', a4: '#6aa3e0', a5: '#3f7fc4', a6: '#2c5f97' },
+  phosphor:  { a3: '#8fdcb1', a4: '#58c08a', a5: '#2f9c63', a6: '#1f7048' },
+};
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { theme: this.readTheme(), menuOpen: false };
+  }
+  readTheme() {
+    try {
+      const t = localStorage.getItem('foster-theme');
+      return (t === 'light' || t === 'dark' || t === 'terminal') ? t : 'dark';
+    } catch (e) { return 'dark'; }
+  }
+  applyTheme(t) {
+    document.documentElement.dataset.theme = t;
+    try { localStorage.setItem('foster-theme', t); } catch (e) {}
+  }
+  applyAccent() {
+    const a = ACCENTS[this.props.accent] || ACCENTS.champagne;
+    const r = document.documentElement.style;
+    r.setProperty('--accent-300', a.a3);
+    r.setProperty('--accent-400', a.a4);
+    r.setProperty('--accent-500', a.a5);
+    r.setProperty('--accent-600', a.a6);
+    r.setProperty('--text-accent', a.a5);
+    r.setProperty('--surface-accent', a.a4);
+  }
+  componentDidMount() {
+    this.applyTheme(this.state.theme);
+    this.applyAccent();
+    document.documentElement.lang = 'ja';
+    try { document.title = 'Foster — あなたのAIを、育成します。'; } catch (e) {}
+    this.refreshIcons();
+    this._onScroll = () => {
+      if (!this._nav) return;
+      const s = (window.scrollY || window.pageYOffset || 0) > 12;
+      this._nav.style.boxShadow = s ? 'var(--shadow-sm)' : 'none';
+      this._nav.style.borderBottomColor = s ? 'var(--border-subtle)' : 'transparent';
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentDidUpdate() {
+    this.applyAccent();
+    this.refreshIcons();
+  }
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+  }
+  refreshIcons() {
+    const go = () => {
+      if (window.lucide && window.lucide.createIcons) {
+        try { window.lucide.createIcons(); } catch (e) {}
+      } else { setTimeout(go, 80); }
+    };
+    go();
+  }
+  setTheme(t) { this.setState({ theme: t }); this.applyTheme(t); }
+  toggleMenu() { this.setState((s) => ({ menuOpen: !s.menuOpen })); }
+  closeMenu() { this.setState({ menuOpen: false }); }
+  scrollTo(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const y = el.getBoundingClientRect().top + (window.scrollY || window.pageYOffset || 0) - 64;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+  themeBtnStyle(name) {
+    const active = this.state.theme === name;
+    return {
+      display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+      width: '30px', height: '28px', border: 'none', cursor: 'pointer',
+      borderRadius: 'var(--radius-xs)',
+      background: active ? 'var(--surface-alt)' : 'transparent',
+      color: active ? 'var(--text-primary)' : 'var(--text-tertiary)',
+      transition: 'background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out)',
+    };
+  }
+  renderVals() {
+    const layout = this.props.heroLayout || 'split';
+    const plans = CONTENT.plans.map((p) => {
+      const f = p.featured;
+      return Object.assign({}, p, {
+        bg: f ? 'var(--surface-inverse)' : 'var(--surface-card)',
+        fg: f ? 'var(--text-on-dark)' : 'var(--text-primary)',
+        muted: f ? 'var(--text-on-dark-muted)' : 'var(--text-tertiary)',
+        border: f ? 'var(--surface-inverse)' : 'var(--border-subtle)',
+        shadow: f ? 'var(--shadow-lg)' : 'var(--shadow-sm)',
+        btnVariant: f ? 'inverse' : 'outline',
+      });
+    });
+    return {
+      proofStats: CONTENT.proofStats,
+      features: CONTENT.features,
+      tools: CONTENT.tools,
+      plans,
+      steps: CONTENT.steps,
+      footerCols: CONTENT.footerCols,
+      showProof: this.props.showProof !== false,
+      isSplit: layout === 'split',
+      isFullbleed: layout === 'fullbleed',
+      isOverlay: layout === 'overlay',
+      setNavRef: (el) => { this._nav = el; },
+      setLight: () => this.setTheme('light'),
+      setDark: () => this.setTheme('dark'),
+      setTerminal: () => this.setTheme('terminal'),
+      styleThemeLight: this.themeBtnStyle('light'),
+      styleThemeDark: this.themeBtnStyle('dark'),
+      styleThemeTerminal: this.themeBtnStyle('terminal'),
+      goContact: () => this.scrollTo('contact'),
+      goProcess: () => this.scrollTo('process'),
+      menuOpen: this.state.menuOpen,
+      burgerMenuStyle: { display: this.state.menuOpen ? 'none' : 'inline-flex' },
+      burgerXStyle: { display: this.state.menuOpen ? 'inline-flex' : 'none' },
+      mobileLinks: [
+        { href: '#features', label: '特長', en: 'FEATURES' },
+        { href: '#tools', label: '対応AI', en: 'AI TOOLS' },
+        { href: '#pricing', label: '料金', en: 'PRICING' },
+        { href: '#process', label: '導入の流れ', en: 'PROCESS' },
+      ],
+      toggleMenu: () => this.toggleMenu(),
+      closeMenu: () => this.closeMenu(),
+      goContactMobile: () => { this.closeMenu(); this.scrollTo('contact'); },
+      mobilePanelStyle: {
+        background: 'var(--nav-scrim)',
+        backdropFilter: 'blur(14px)',
+        WebkitBackdropFilter: 'blur(14px)',
+        display: 'grid',
+        gridTemplateRows: this.state.menuOpen ? '1fr' : '0fr',
+        transition: 'grid-template-rows var(--dur-base) var(--ease-out)',
+      },
+      onSubmit: (e) => { e.preventDefault(); },
+    };
+  }
+}
+</script>
+</body>
+</html>

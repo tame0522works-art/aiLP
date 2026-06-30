@@ -1,0 +1,197 @@
+/* ============================================================
+   THEMES — Dark + Terminal overrides.
+   Imported LAST from styles.css. Uses :root[data-theme="…"]
+   (specificity 0,2,0) so it reliably beats the base :root
+   defaults in colors.css / typography.css.
+
+   Every surface in the kit references SEMANTIC aliases
+   (--surface-*, --text-*, --border-*, --action-*, --fill-*),
+   so re-theming is purely token work — components never change.
+
+   Set the active theme by writing data-theme on <html>:
+       document.documentElement.dataset.theme = 'dark';
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   DARK — warm near-black surfaces, light ink. Rhythm comes from
+   subtle elevation (page → alt → inverse = deepest band).
+   ------------------------------------------------------------ */
+:root[data-theme="dark"] {
+  /* Surfaces */
+  --surface-page:     #100f0d;
+  --surface-raised:   #1a1815;
+  --surface-alt:      #161410;
+  --surface-card:     #1a1815;
+  --surface-inverse:  #060605;   /* proof / CTA / footer / featured — deepest band */
+
+  /* Text on the (now dark) page */
+  --text-primary:     #f4f2ed;
+  --text-secondary:   #b8b2a8;
+  --text-tertiary:    #8a8478;
+  --text-disabled:    #5f594f;
+
+  /* Text on the deepest inverse bands (unchanged — already light) */
+  --text-on-dark:        #f4f2ed;
+  --text-on-dark-muted:  #b0aaa0;
+  --text-on-dark-faint:  #6f695f;
+
+  /* Accent pops a touch brighter on dark */
+  --accent-400:       #d0bd92;
+  --accent-500:       #c4ad7e;
+  --text-accent:      var(--accent-400);
+  --surface-accent:   var(--accent-400);
+
+  /* Borders / hairlines */
+  --border-strong:         rgba(244, 242, 237, 0.22);
+  --border-subtle:         rgba(244, 242, 237, 0.10);
+  --border-on-dark:        rgba(244, 242, 237, 0.12);
+  --border-on-dark-strong: rgba(244, 242, 237, 0.26);
+
+  /* Interactive — solid button is light ink on dark */
+  --action-solid:       #f4f2ed;
+  --action-solid-hover: #d8d4cc;
+  --action-on-solid:    #100f0d;
+  --action-inverse:     #f4f2ed;
+  --action-on-inverse:  #0a0a09;
+
+  /* Fills */
+  --fill-strong:    #f4f2ed;
+  --on-fill-strong: #100f0d;
+  --fill-muted:     #2c2a26;
+  --accent-tint:    rgba(208, 189, 146, 0.20);
+
+  /* Status — lifted for legibility on dark */
+  --positive: #74b386;
+  --warning:  #c69a55;
+  --critical: #c46b57;
+  --info:     #6f8ea0;
+
+  /* Shadows — deeper, no warm tint reads on dark */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.40);
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 10px 32px rgba(0, 0, 0, 0.50);
+  --shadow-lg: 0 26px 64px rgba(0, 0, 0, 0.58);
+
+  /* Nav scrim */
+  --nav-scrim: rgba(16, 15, 13, 0.82);
+}
+
+/* ------------------------------------------------------------
+   TERMINAL — green phosphor CRT. "How an AI sees the site."
+   Only green comes out (昔のPCの緑色しか出てこない画面).
+   Everything is monospace; surfaces collapse to near-black;
+   accent + status all become green.
+   ------------------------------------------------------------ */
+:root[data-theme="terminal"] {
+  /* Force monospace everywhere. Space Mono for Latin/specs;
+     Noto Sans JP carries Japanese (kept uniform, near-mono). */
+  --font-display: 'Space Mono', 'Noto Sans JP', ui-monospace, 'SFMono-Regular', monospace;
+  --font-sans:    'Space Mono', 'Noto Sans JP', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* Surfaces — black with a faint green cast */
+  --surface-page:     #020a04;
+  --surface-raised:   #04130a;
+  --surface-alt:      #031007;
+  --surface-card:     #04130a;
+  --surface-inverse:  #010602;
+
+  /* Phosphor green ramp */
+  --text-primary:     #4dff7a;
+  --text-secondary:   #2fd163;
+  --text-tertiary:    #1c9c46;
+  --text-disabled:    #136b30;
+
+  --text-on-dark:        #4dff7a;
+  --text-on-dark-muted:  #2fd163;
+  --text-on-dark-faint:  #1c9c46;
+
+  /* Accent IS green (only green comes out) */
+  --accent-300:     #9dffb8;
+  --accent-400:     #7dff9e;
+  --accent-500:     #4dff7a;
+  --accent-600:     #2fd163;
+  --text-accent:    #7dff9e;
+  --surface-accent: #4dff7a;
+
+  /* Borders — green hairlines */
+  --border-strong:         rgba(77, 255, 122, 0.45);
+  --border-subtle:         rgba(77, 255, 122, 0.20);
+  --border-on-dark:        rgba(77, 255, 122, 0.20);
+  --border-on-dark-strong: rgba(77, 255, 122, 0.40);
+
+  /* Interactive — solid = green block with black-green text */
+  --action-solid:       #4dff7a;
+  --action-solid-hover: #7dff9e;
+  --action-on-solid:    #021006;
+  --action-inverse:     #4dff7a;
+  --action-on-inverse:  #021006;
+
+  /* Fills */
+  --fill-strong:    #4dff7a;
+  --on-fill-strong: #021006;
+  --fill-muted:     rgba(77, 255, 122, 0.18);
+  --accent-tint:    rgba(77, 255, 122, 0.18);
+
+  /* Status — all green */
+  --positive: #4dff7a;
+  --warning:  #7dff9e;
+  --critical: #4dff7a;
+  --info:     #2fd163;
+
+  /* Shadows become green glows */
+  --shadow-xs: 0 0 6px rgba(77, 255, 122, 0.10);
+  --shadow-sm: 0 0 12px rgba(77, 255, 122, 0.12);
+  --shadow-md: 0 0 24px rgba(77, 255, 122, 0.14);
+  --shadow-lg: 0 0 40px rgba(77, 255, 122, 0.16);
+  --shadow-on-dark: 0 0 40px rgba(77, 255, 122, 0.18);
+
+  /* Nav scrim */
+  --nav-scrim: rgba(2, 10, 4, 0.86);
+}
+
+/* ---- Terminal CRT effects: phosphor glow on text, scanlines, vignette ---- */
+:root[data-theme="terminal"] body {
+  text-shadow: 0 0 1px rgba(77, 255, 122, 0.45), 0 0 7px rgba(77, 255, 122, 0.22);
+}
+:root[data-theme="terminal"] img,
+:root[data-theme="terminal"] image-slot {
+  /* desaturate any raster/illustration into the green field */
+  filter: grayscale(1) sepia(1) hue-rotate(70deg) saturate(3) brightness(1.1);
+}
+/* scanlines */
+:root[data-theme="terminal"] body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  background: repeating-linear-gradient(
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.16) 3px,
+    rgba(0, 0, 0, 0.16) 4px
+  );
+}
+/* CRT vignette + a faint green wash */
+:root[data-theme="terminal"] body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9997;
+  background:
+    radial-gradient(ellipse at center, rgba(77, 255, 122, 0.04) 0%, transparent 55%),
+    radial-gradient(ellipse at center, transparent 58%, rgba(0, 0, 0, 0.55) 100%);
+}
+/* subtle phosphor flicker — enhancement only, off for reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  :root[data-theme="terminal"] body::after {
+    animation: termFlicker 4.5s steps(60) infinite;
+  }
+  @keyframes termFlicker {
+    0%, 96%, 100% { opacity: 1; }
+    97% { opacity: 0.86; }
+    98% { opacity: 1; }
+    99% { opacity: 0.92; }
+  }
+}
