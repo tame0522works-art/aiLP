@@ -1,0 +1,17 @@
+/* ============================================================
+   FONTS — @font-face declarations
+   Noto Sans JP is self-hosted (variable font, weights 100–900).
+   Schibsted Grotesk (display) + Space Mono (spec labels) load
+   from Google Fonts via the @import below.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('../fonts/NotoSansJP-VariableFont_wght.ttf') format('truetype-variations'),
+       url('../fonts/NotoSansJP-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
